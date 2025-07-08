@@ -2,31 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Richard Khristi - AI & Automation Innovator, Cybersecurity Strategist, and RPA Developer">
   <title>Richard Khristi | AI | Automation | Cybersecurity</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.22/build/spline-viewer.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --batman-dark: #0A0E1A;
-      --batman-dark-2: #070A14;
-      --batman-accent: #6de7ff;
-      --batman-accent-2: #7C3AED;
-      --batman-light: #FFFFFF;
-      --batman-gray: #A0AEC0;
-      --glass-bg: rgba(10, 14, 26, 0.8);
-      --glass-border: rgba(124, 58, 237, 0.2);
-      --glass-blur: blur(12px);
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+  :root {
+  --batman-dark: #080B10;               /* Military black-blue */
+  --batman-dark-2: #050608;             /* True deep matte black */
+  --batman-accent: #13E6C6;             /* Tactical neon teal (like night-vision glow) */
+  --batman-accent-2: #1363DF;           /* Officer navy blue */
+  --batman-light: #E1E6EB;              /* Soft desaturated gray-white */
+  --batman-gray: #6C757D;               /* Battle-worn steel gray */
+  --glass-bg: rgba(10, 13, 18, 0.85);   /* Stealth HUD glass */
+  --glass-border: rgba(19, 230, 198, 0.2); /* Night-ops glow border */
+  --glass-blur: blur(16px);             /* Heavier futuristic blur */
+  --transition: all 0.35s ease-in-out;
+}
+
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    body {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+}
+
 
     body {
       background: linear-gradient(135deg, var(--batman-dark), var(--batman-dark-2));
@@ -81,7 +86,7 @@
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
-spline-viewer {
+.spline-viewer {
   width: 100%;
   height: 100%;
   border: none;
@@ -521,6 +526,38 @@ spline-viewer {
       color: var(--batman-dark);
       transform: translateY(-5px);
     }
+    .about-image {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02); /* Optional subtle blend */
+}
+
+.about-image spline-viewer {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: transparent;
+  border: none;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    margin-top: 30px;
+    max-height: 400px;
+  }
+}
+
+
 
     /* Footer */
     footer {
@@ -611,6 +648,116 @@ spline-viewer {
         margin-bottom: 40px;
       }
     }
+    /* === MOBILE + DESKTOP RESPONSIVE CSS === */
+
+/* Viewport setup for mobile */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header > div {
+    width: 100% !important;
+    height: auto !important;
+    padding: 2rem !important;
+  }
+
+  .hero-glass {
+    max-width: 100%;
+    padding: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .about-image,
+  .about-image spline-viewer {
+    max-height: 350px;
+  }
+
+  .contact-info {
+    padding: 25px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline:before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 20px;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+}
+
+/* Grid responsive on tablet */
+@media (max-width: 1024px) {
+  .about-grid,
+  .contact-container,
+  .hero-content {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Section padding dynamic */
+section {
+  padding: 8vw 0;
+}
+
+/* Spline Viewer full fit */
+spline-viewer {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 500px;
+  min-height: 300px;
+  border: none;
+}
+
+/* About image wrapper */
+.about-image {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scalable fonts */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+.section-heading,
+.timeline-title,
+.project-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+
   </style>
 </head>
 <body>
@@ -626,9 +773,17 @@ spline-viewer {
   <div style="flex: 1 1 45%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 3rem;">
     <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(0, 247, 255, 0.2); backdrop-filter: blur(18px); border-radius: 18px; padding: 2.5rem 3rem; max-width: 520px; box-shadow: 0 20px 60px rgba(0, 247, 255, 0.08);">
       
-      <h1 style="font-size: 2.75rem; font-weight: 900; color: #ffffff; margin-bottom: 1.25rem; line-height: 1.2;">
-        Hi, I'm <span style="color: #00f7ff; text-shadow: 0 0 20px #00f7ff, 0 0 10px #00f7ff;">Richard Khristi</span>
-      </h1>
+    <h1 style="font-size: 2.75rem; font-weight: 900; color: #ffffff; margin-bottom: 1.25rem; line-height: 1.2;">
+  Hi, I'm <span style="
+    color: #13E6C6;
+    text-shadow: 
+      0 0 10px rgba(19, 230, 198, 0.4), 
+      0 0 20px rgba(19, 230, 198, 0.3), 
+      0 0 40px rgba(19, 230, 198, 0.2);
+    font-weight: 900;
+  ">Richard Khristi</span>
+</h1>
+
 
       <p style="font-size: 1.15rem; color: #d0dce7; font-weight: 400; line-height: 1.6;">
         Technology isn’t just code—it’s <strong>philosophy</strong>, <strong>empathy</strong>, and <strong>execution</strong>. I bring those together through automation, cybersecurity, and AI to build future-forward, human-centered systems.
@@ -1028,7 +1183,7 @@ spline-viewer {
 </section>
 
 
-  <!-- Contact Section -->
+  <!-- Contact Section --> <!-- Contact Section -->
   <section id="contact">
     <div class="container">
       <h2 class="section-heading">Get In Touch</h2>
@@ -1071,9 +1226,11 @@ spline-viewer {
             <a href="https://github.com/RICHARDKHRISTI" class="social-link">
               <i class="fab fa-github"></i>
             </a>
-            <a href="mailto:richardkhristi11616@gmail.com" class="social-link">
-              <i class="fas fa-envelope"></i>
-            </a>
+            <a href="https://mail.google.com/mail/?view=cm&to=richardkhristi11616@gmail.com" class="social-link" target="_blank" rel="noopener noreferrer">
+  <i class="fas fa-envelope"></i>
+</a>
+
+
           </div>
         </div>
         
@@ -1083,6 +1240,8 @@ spline-viewer {
       </div>
     </div>
   </section>
+
+
 
   <!-- Footer -->
   <footer>
